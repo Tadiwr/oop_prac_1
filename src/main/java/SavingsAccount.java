@@ -10,23 +10,22 @@ public class SavingsAccount extends Account {
     }
 
     @Override
-    public boolean withdraw(double amount) {
+    public void withdraw(double amount) {
 
         if (amount < 0) {
-            System.out.println("You cannot withdraw a negative amount");
-            return false;
+            System.out.println(this.accountNumber + ": You cannot withdraw a negative amount");
+            return;
         }
 
         double nextBalance = this.balance - amount;
 
         if (nextBalance < minimumBalance) {
-            System.out.println("Withdrawal rejected as it takes balance below the minimum account balance");
-            return false;
+            System.out.println(this.accountNumber + ": Withdrawal rejected as it takes balance below the minimum account balance");
+            return;
         }
 
         this.balance = nextBalance;
 
-        return true;
     }
 
     /** Applies a fixed interest rate to the balance **/

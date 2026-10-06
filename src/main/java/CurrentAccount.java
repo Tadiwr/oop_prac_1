@@ -10,21 +10,20 @@ public class CurrentAccount extends Account{
     }
 
     @Override
-    public boolean withdraw(double amount) {
+    public void withdraw(double amount) {
         double nextBalance = this.balance - amount;
 
         if (amount < 0) {
-            System.out.println("You cannot withdraw a negative amount");
-            return false;
+            System.out.println(this.accountNumber + ": You cannot withdraw a negative amount");
+            return;
         }
 
         if (nextBalance < overdraftLimit) {
-            System.out.println("Withdrawal rejected, overdraft limit reached");
-            return false;
+            System.out.println(this.accountNumber + ": Withdrawal rejected, overdraft limit reached");
+            return;
         }
 
         this.balance = nextBalance;
-        return true;
     }
 
     /** Method that charges a fixed maintenance fee on account balance */
