@@ -1,10 +1,12 @@
 public class SavingsAccount extends Account {
 
-    private final double MINIMUM_BALANCE = 100.00;
-    private final double INTEREST_RATE = 0.05;
+    private final double minimumBalance;
+    private final double interestRate;
 
     public SavingsAccount(String accountNumber, Double balance) {
         super(accountNumber, balance);
+        this.minimumBalance = 100;
+        this.interestRate = 0.05;
     }
 
     @Override
@@ -17,7 +19,7 @@ public class SavingsAccount extends Account {
 
         double nextBalance = this.balance - amount;
 
-        if (nextBalance < MINIMUM_BALANCE) {
+        if (nextBalance < minimumBalance) {
             System.out.println("Withdrawal rejected as it takes balance below the minimum account balance");
             return false;
         }
@@ -30,7 +32,7 @@ public class SavingsAccount extends Account {
     /** Applies a fixed interest rate to the balance **/
     @Override
     public void endOfMonth() {
-        double interestEarned = this.balance * this.INTEREST_RATE;
+        double interestEarned = this.balance * this.interestRate;
         this.balance += interestEarned;
     }
 }
