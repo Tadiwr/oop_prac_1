@@ -45,7 +45,7 @@ public class BankDemo {
         });
 
         System.out.println("\n--------------- Run End of Month Method ------------------");
-        // withdraw 120 - Current account reject overdraft
+        // run end of month method, for each acc
         accounts.forEach(acc -> {
             acc.endOfMonth();
             printAccountBalance(acc);
