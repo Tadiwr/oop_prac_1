@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class BankDemo {
-    public static void main(String[] args) {
+    public static void main() {
         System.out.println("-------------- BANK OF JAVA DEMO -------------------");
 
         List<Account> accounts = List.of(
@@ -11,7 +11,10 @@ public class BankDemo {
 
         System.out.println("\n--------------- Deposit 115 in each account ------------------");
         // deposit 115 to each account
-        accounts.forEach(acc -> acc.deposit(115.0));
+        accounts.forEach(acc ->{
+            acc.deposit(115.0);
+            printAccountBalance(acc);
+        });
 
         System.out.println("\n--------------- Withdraw 10 in each account ------------------");
         // withdraw 10 and print balance for each account
@@ -31,6 +34,20 @@ public class BankDemo {
         // withdraw 100 - Current account should allow overdraft
         accounts.forEach(acc -> {
             acc.withdraw(100.0);
+            printAccountBalance(acc);
+        });
+
+        System.out.println("\n--------------- Withdraw 120 in each account ------------------");
+        // withdraw 120 - Current account reject overdraft
+        accounts.forEach(acc -> {
+            acc.withdraw(120.0);
+            printAccountBalance(acc);
+        });
+
+        System.out.println("\n--------------- Run End of Month Method ------------------");
+        // withdraw 120 - Current account reject overdraft
+        accounts.forEach(acc -> {
+            acc.endOfMonth();
             printAccountBalance(acc);
         });
 

@@ -19,7 +19,7 @@ public class CurrentAccount extends Account{
         }
 
         if (nextBalance < overdraftLimit) {
-            System.out.println(this.accountNumber + ": Withdrawal rejected, overdraft limit reached");
+            System.out.println(this.accountNumber + ": Withdrawal rejected, overdraft limit of " + this.overdraftLimit + " was exceeded");
             return;
         }
 

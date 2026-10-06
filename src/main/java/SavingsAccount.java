@@ -20,7 +20,7 @@ public class SavingsAccount extends Account {
         double nextBalance = this.balance - amount;
 
         if (nextBalance < minimumBalance) {
-            System.out.println(this.accountNumber + ": Withdrawal rejected as it takes balance below the minimum account balance");
+            System.out.println(this.accountNumber + ": Withdrawal rejected as it takes balance below the minimum of " + this.minimumBalance);
             return;
         }
 
