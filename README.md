@@ -21,3 +21,5 @@ The Bank of Java, if is a small java maven application that demonstrates polymor
 ## Running Project
 - in order to run project, please open in any Java IDE preferably IntelliJ
 - open the `BankDemo` class and run the main method `BankDemo.main()` method
+
+---
